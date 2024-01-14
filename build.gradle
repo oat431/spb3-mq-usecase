@@ -1,0 +1,62 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.2.1'
+	id 'io.spring.dependency-management' version '1.1.4'
+	id 'org.hibernate.orm' version '6.4.1.Final'
+	id 'org.graalvm.buildtools.native' version '0.9.28'
+}
+
+group = 'panomete.playground'
+version = '0.0.1'
+
+java {
+	sourceCompatibility = '21'
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	// dev tools
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+	// boilerplate reducer tools
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	annotationProcessor 'org.projectlombok:lombok'
+	compileOnly 'org.projectlombok:lombok'
+
+	// monitoring
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+
+	// database
+	runtimeOnly 'org.postgresql:postgresql'
+
+	// api
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	// messaging and streaming queue
+	implementation 'org.springframework.kafka:spring-kafka'
+	implementation 'org.apache.kafka:kafka-streams'
+
+	// testing
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.kafka:spring-kafka-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
+
+hibernate {
+	enhancement {
+		enableAssociationManagement = true
+	}
+}
+
