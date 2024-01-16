@@ -1,6 +1,6 @@
-# Getting Started
+# Spring boot 3 messaging queue usecase
 
-### Reference Documentation
+### Technology that use in this experiment
 For further reference, please consider the following sections:
 
 * [Official Gradle documentation](https://docs.gradle.org)
@@ -14,67 +14,3 @@ For further reference, please consider the following sections:
 * [Apache Kafka Streams Support](https://docs.spring.io/spring-kafka/docs/current/reference/html/#streams-kafka-streams)
 * [Apache Kafka Streams Binding Capabilities of Spring Cloud Stream](https://docs.spring.io/spring-cloud-stream/docs/current/reference/htmlsingle/index.html#_kafka_streams_binding_capabilities_of_spring_cloud_stream)
 * [Spring Boot Actuator](https://docs.spring.io/spring-boot/docs/3.2.1/reference/htmlsingle/index.html#actuator)
-
-### Guides
-The following guides illustrate how to use some features concretely:
-
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
-* [Accessing Data with JPA](https://spring.io/guides/gs/accessing-data-jpa/)
-* [Samples for using Apache Kafka Streams with Spring Cloud stream](https://github.com/spring-cloud/spring-cloud-stream-samples/tree/master/kafka-streams-samples)
-* [Building a RESTful Web Service with Spring Boot Actuator](https://spring.io/guides/gs/actuator-service/)
-
-### Additional Links
-These additional references should also help you:
-
-* [Gradle Build Scans – insights for your project's build](https://scans.gradle.com#gradle)
-* [Configure AOT settings in Build Plugin](https://docs.spring.io/spring-boot/docs/3.2.1/gradle-plugin/reference/htmlsingle/#aot)
-
-## GraalVM Native Support
-
-This project has been configured to let you generate either a lightweight container or a native executable.
-It is also possible to run your tests in a native image.
-
-### Lightweight Container with Cloud Native Buildpacks
-If you're already familiar with Spring Boot container images support, this is the easiest way to get started.
-Docker should be installed and configured on your machine prior to creating the image.
-
-To create the image, run the following goal:
-
-```
-$ ./gradlew bootBuildImage
-```
-
-Then, you can run the app like any other container:
-
-```
-$ docker run --rm -p 8080:8080 mqusecase:0.0.1-SNAPSHOT
-```
-
-### Executable with Native Build Tools
-Use this option if you want to explore more options such as running your tests in a native image.
-The GraalVM `native-image` compiler should be installed and configured on your machine.
-
-NOTE: GraalVM 22.3+ is required.
-
-To create the executable, run the following goal:
-
-```
-$ ./gradlew nativeCompile
-```
-
-Then, you can run the app as follows:
-```
-$ build/native/nativeCompile/mqusecase
-```
-
-You can also run your existing tests suite in a native image.
-This is an efficient way to validate the compatibility of your application.
-
-To run your existing tests in a native image, run the following goal:
-
-```
-$ ./gradlew nativeTest
-```
-
