@@ -1,6 +1,9 @@
 spring:
   application:
     name: "spring boot 3 mq use case"
+    threads:
+      virtual:
+        enabled: true
   devtools:
     livereload:
       enabled: true
@@ -23,6 +26,7 @@ spring:
     properties:
       hibernate:
         format_sql: true
+
 
 server:
   port: 8080
